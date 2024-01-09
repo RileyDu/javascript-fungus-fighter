@@ -26,6 +26,10 @@ function checkAP() {
     let imDead = document.getElementsByClassName("walk")[0];
     imDead.classList.remove("walk");
     imDead.classList.add("jump");
+    let buttons = document.getElementsByClassName('attack-btn')
+    for (button of buttons){
+        button.disabled = true;
+    }
   }
 }
 
