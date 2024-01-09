@@ -5,10 +5,10 @@
 let fungusHP = 100; // global to let access multiple times
 let fungusAP = 100;
 let myAPElement = document.getElementsByClassName("ap-text")[0]; //selects the div with the AP value
-let yourHPElement = document.getElementsByClassName("hp-text")[0];  //selects the div with the HP value
+let yourHPElement = document.getElementsByClassName("hp-text")[0]; //selects the div with the HP value
 // console.log(yourHPElement, myAPElement);
-let hpMeter = document.getElementById('hp-meter') // need a way to adjust & access the progress bar
-let apMeter = document.getElementById('ap-meter')  // need a way to adjust & access the progress bar
+let hpMeter = document.getElementById("hp-meter"); // need a way to adjust & access the progress bar
+let apMeter = document.getElementById("ap-meter"); // need a way to adjust & access the progress bar
 
 function onReady() {
   console.log("Ready to go!");
@@ -21,9 +21,10 @@ function checkAP() {
     let imDead = document.getElementsByClassName("walk")[0];
     imDead.classList.remove("walk");
     imDead.classList.add("jump");
-    let buttons = document.getElementsByClassName('attack-btn')
-    for (button of buttons){ // for of loop to assign the attribute to every button in the class
-        button.disabled = true;
+    let buttons = document.getElementsByClassName("attack-btn");
+    for (button of buttons) {
+      // for of loop to assign the attribute to every button in the class
+      button.disabled = true;
     } // if AP reaches 0 with most recent attack, disable buttons
   } // and change the mushroom class to jump(celly)
 }
@@ -35,17 +36,17 @@ function checkHP() {
     yourDead.classList.add("dead"); // when HP is zero change the mushroom to dead
     // console.log(yourDead);
   } else if (fungusHP < 50) {
-  setInterval(regenHP, 1000);
-} // regen health of mushroom if less than 50
+    setInterval(regenHP, 1000);
+  } // regen health of mushroom if less than 50
 }
 
-function regenHP(){
-    yourHPElement.innerHTML = `${fungusHP++} HP`;
-    hpMeter.value++;
+function regenHP() {
+  yourHPElement.innerHTML = `${fungusHP++} HP`;
+  hpMeter.value++;
 } // adjust the DOM value AND the life bar
 
 function fireScepter(event) {
-//   console.log("Fire Scepter!");
+  //   console.log("Fire Scepter!");
   fungusHP -= 14;
   fungusAP -= 12; // subtract from the global value
   hpMeter.value -= 14;
@@ -56,15 +57,15 @@ function fireScepter(event) {
   if (fungusHP < 0) {
     fungusHP = 0;
   } // won't let HP & AP be negative
-//   console.log(fungusAP, fungusHP);
+  //   console.log(fungusAP, fungusHP);
   myAPElement.innerHTML = `${fungusAP} AP`;
   yourHPElement.innerHTML = `${fungusHP} HP`; //renders the new calulation to DOM
   checkHP(); // conditionals are run in the function, waiting for a win state
-  checkAP();  // conditionals are run in the function, waiting for a win state
+  checkAP(); // conditionals are run in the function, waiting for a win state
 }
 
 function fireEntagle(event) {
-//   console.log("Fire Entagle!");
+  //   console.log("Fire Entagle!");
   fungusHP -= 9;
   fungusAP -= 23;
   hpMeter.value -= 9;
@@ -82,7 +83,7 @@ function fireEntagle(event) {
 }
 
 function fireBlade(event) {
-//   console.log("Fire Blade!");
+  //   console.log("Fire Blade!");
   fungusHP -= 47;
   fungusAP -= 38;
   hpMeter.value -= 47;
@@ -100,7 +101,7 @@ function fireBlade(event) {
 }
 
 function fireStar(event) {
-//   console.log("Fire Star!");
+  //   console.log("Fire Star!");
   fungusHP -= 25;
   fungusAP -= 33;
   hpMeter.value -= 25;
