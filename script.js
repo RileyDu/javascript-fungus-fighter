@@ -41,7 +41,14 @@ function checkHP() {
     yourDead.classList.remove("walk");
     yourDead.classList.add("dead");
     // console.log(yourDead);
-  }
+  } else if (fungusHP < 50) {
+  setInterval(regenHP, 1000);
+}
+}
+
+function regenHP(){
+    yourHPElement.innerHTML = `${fungusHP++} HP`;
+    hpMeter.value++;
 }
 
 function fireScepter(event) {
