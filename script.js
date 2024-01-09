@@ -21,19 +21,21 @@ function onReady() {
 
 onReady();
 
-function checkAP(){
-if (fungusAP === 0){
-
+function checkAP() {
+  if (fungusAP === 0) {
+    let imDead = document.getElementsByClassName("walk")[0];
+    imDead.classList.remove("walk");
+    imDead.classList.add("jump");
+  }
 }
-}
 
-function checkHP(){
-if (fungusHP === 0){
-    let yourDead = document.getElementsByClassName('walk')[0];
-    yourDead.classList.remove('walk')
-    yourDead.classList.add('dead')
+function checkHP() {
+  if (fungusHP === 0) {
+    let yourDead = document.getElementsByClassName("walk")[0];
+    yourDead.classList.remove("walk");
+    yourDead.classList.add("dead");
     // console.log(yourDead);
-}
+  }
 }
 
 function fireScepter(event) {
@@ -50,6 +52,7 @@ function fireScepter(event) {
   myAPElement.innerHTML = `${fungusAP} AP`;
   yourHPElement.innerHTML = `${fungusHP} HP`;
   checkHP();
+  checkAP();
 }
 
 function fireEntagle(event) {
@@ -65,6 +68,7 @@ function fireEntagle(event) {
   myAPElement.innerHTML = `${fungusAP} AP`;
   yourHPElement.innerHTML = `${fungusHP} HP`;
   checkHP();
+  checkAP();
 }
 
 function fireBlade(event) {
@@ -80,6 +84,7 @@ function fireBlade(event) {
   myAPElement.innerHTML = `${fungusAP} AP`;
   yourHPElement.innerHTML = `${fungusHP} HP`;
   checkHP();
+  checkAP();
 }
 
 function fireStar(event) {
@@ -95,4 +100,5 @@ function fireStar(event) {
   myAPElement.innerHTML = `${fungusAP} AP`;
   yourHPElement.innerHTML = `${fungusHP} HP`;
   checkHP();
+  checkAP();
 }
