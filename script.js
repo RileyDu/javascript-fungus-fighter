@@ -1,7 +1,8 @@
 // State Variables can be declared outside of the onReady
 // Feel free to make this to what you want!
 // Example:
-// let fungusHP = 100;
+let fungusHP = 100;
+let fungusAP = 100;
 
 function onReady() {
     console.log("Ready to go!")
@@ -18,3 +19,23 @@ function onReady() {
 
 
 onReady()
+
+function fireScepter(event){
+    fungusHP -=
+    fungusAP -=
+}
+
+function fireEntagle(event){
+    fungusHP -=
+    fungusAP -=
+}
+
+function fireBlade(event){
+    fungusHP -=
+    fungusAP -=
+}
+
+function fireStar(event){
+    fungusHP -=
+    fungusAP -=
+}
