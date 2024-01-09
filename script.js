@@ -35,7 +35,7 @@ function checkHP() {
     yourDead.classList.remove("walk");
     yourDead.classList.add("dead"); // when HP is zero change the mushroom to dead
     // console.log(yourDead);
-  } else if (fungusHP < 50) {
+  } else if (fungusHP < 50 && fungusHP > 0) {
     setInterval(regenHP, 1000);
   } // regen health of mushroom if less than 50
 }
