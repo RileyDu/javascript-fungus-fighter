@@ -5,7 +5,7 @@ let fungusHP = 100;
 let fungusAP = 100;
 let myAPElement = document.getElementsByClassName("ap-text")[0];
 let yourHPElement = document.getElementsByClassName("hp-text")[0];
-console.log(yourHPElement, myAPElement);
+// console.log(yourHPElement, myAPElement);
 
 function onReady() {
   console.log("Ready to go!");
@@ -21,6 +21,21 @@ function onReady() {
 
 onReady();
 
+function checkAP(){
+if (fungusAP === 0){
+
+}
+}
+
+function checkHP(){
+if (fungusHP === 0){
+    let yourDead = document.getElementsByClassName('walk')[0];
+    yourDead.classList.remove('walk')
+    yourDead.classList.add('dead')
+    // console.log(yourDead);
+}
+}
+
 function fireScepter(event) {
   console.log("Fire Scepter!");
   fungusHP -= 14;
@@ -34,6 +49,7 @@ function fireScepter(event) {
   console.log(fungusAP, fungusHP);
   myAPElement.innerHTML = `${fungusAP} AP`;
   yourHPElement.innerHTML = `${fungusHP} HP`;
+  checkHP();
 }
 
 function fireEntagle(event) {
@@ -48,6 +64,7 @@ function fireEntagle(event) {
   }
   myAPElement.innerHTML = `${fungusAP} AP`;
   yourHPElement.innerHTML = `${fungusHP} HP`;
+  checkHP();
 }
 
 function fireBlade(event) {
@@ -62,6 +79,7 @@ function fireBlade(event) {
   }
   myAPElement.innerHTML = `${fungusAP} AP`;
   yourHPElement.innerHTML = `${fungusHP} HP`;
+  checkHP();
 }
 
 function fireStar(event) {
@@ -76,4 +94,5 @@ function fireStar(event) {
   }
   myAPElement.innerHTML = `${fungusAP} AP`;
   yourHPElement.innerHTML = `${fungusHP} HP`;
+  checkHP();
 }
